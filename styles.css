@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --border-color: #dcdde1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section {
+    text-align: center;
+}
+
+input[type="file"] {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 2px dashed var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.compression-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+input[type="range"] {
+    width: 200px;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.image-wrapper {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.zoom-tool {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--secondary-color);
+    background: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    background-size: 400% 400%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.zoom-tool::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.performance-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.metric {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.metric-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.cao-content {
+    margin-top: 1rem;
+}
+
+.cao-content ul {
+    list-style-position: inside;
+    margin-top: 1rem;
+}
+
+.cao-content li {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 2rem;
+}
+
+.image-info {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.size-label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.original-image, .compressed-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.original-image h3, .compressed-image h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.performance-details {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.performance-details h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.performance-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.performance-details li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.performance-details li:last-child {
+    border-bottom: none;
+}
+
+.performance-details span {
+    font-family: monospace;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header h2 {
+        font-size: 1.2rem;
+    }
+} 

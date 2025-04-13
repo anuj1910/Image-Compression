@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAO Hackathon - Sparse Matrix Image Compression</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Computer Architecture & Organization Hackathon</h1>
+        <h2>Sparse Matrix Multiplication for Image Compression</h2>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <h3>Upload Image</h3>
+            <input type="file" id="imageInput" accept="image/*">
+            <div class="compression-controls">
+                <label for="compressionLevel">Compression Level:</label>
+                <input type="range" id="compressionLevel" min="0" max="100" value="50">
+                <span id="compressionValue">50%</span>
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <div class="image-container">
+                <div class="original-image">
+                    <h3>Original Image</h3>
+                    <div class="image-wrapper">
+                        <img id="originalImg" alt="Original Image">
+                        <div class="zoom-tool" id="originalZoom"></div>
+                    </div>
+                    <div class="image-info">
+                        <span class="size-label">Size:</span>
+                        <span id="originalSize">-</span>
+                    </div>
+                </div>
+                <div class="compressed-image">
+                    <h3>Compressed Image</h3>
+                    <div class="image-wrapper">
+                        <img id="compressedImg" alt="Compressed Image">
+                        <div class="zoom-tool" id="compressedZoom"></div>
+                    </div>
+                    <div class="image-info">
+                        <span class="size-label">Size:</span>
+                        <span id="compressedSize">-</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="performance-metrics">
+            <h3>Performance Metrics</h3>
+            <div class="metrics-container">
+                <div class="metric">
+                    <span class="metric-label">Compression Ratio:</span>
+                    <span id="compressionRatio">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">PSNR (dB):</span>
+                    <span id="psnr">-</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Processing Time:</span>
+                    <span id="processingTime">-</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cao-details">
+            <h3>Computer Architecture & Organization Implementation</h3>
+            <div class="cao-content">
+                <h4>Sparse Matrix Implementation Details</h4>
+                <ul>
+                    <li>Matrix Storage: CSR (Compressed Sparse Row) format with optimized memory layout</li>
+                    <li>Parallel Processing: OpenMP for multi-threaded matrix operations</li>
+                    <li>Cache Optimization: Block-based processing with cache-aware data structures</li>
+                    <li>Memory Management: Efficient memory allocation using aligned memory blocks</li>
+                    <li>SIMD Instructions: Vectorized operations for pixel processing</li>
+                    <li>Branch Prediction: Optimized conditional statements for better pipeline utilization</li>
+                </ul>
+                <div class="performance-details">
+                    <h4>Performance Optimization Details</h4>
+                    <ul>
+                        <li>Thread Count: <span id="threadCount">-</span></li>
+                        <li>Cache Hit Rate: <span id="cacheHitRate">-</span></li>
+                        <li>Memory Bandwidth: <span id="memoryBandwidth">-</span></li>
+                        <li>Vectorization Efficiency: <span id="vectorizationEfficiency">-</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CAO Hackathon Project - Sparse Matrix Image Compression</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
