@@ -1,4 +1,4 @@
-# Sparse Matrix Image Compression - CAO Hackathon Project
+# Image Compression Using Sparse Matrix 
 
 This project implements a sparse matrix multiplication algorithm for image compression, focusing on efficient compression while preserving image quality. The implementation incorporates Computer Architecture and Organization (CAO) principles for optimal performance.
 
